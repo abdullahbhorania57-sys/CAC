@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Double Door Refrigerator Body -->
+  <rect x="10" y="4" width="28" height="40" rx="3.5" />
+  <!-- Door Divider (Freezer Top / Refrigerator Bottom) -->
+  <line x1="10" y1="17" x2="38" y2="17" />
+  <!-- Freezer Door Handle -->
+  <line x1="14" y1="8" x2="14" y2="13" />
+  <!-- Lower Refrigerator Door Handle -->
+  <line x1="14" y1="21" x2="14" y2="31" />
+  <!-- Water/Ice Dispenser Window on lower door -->
+  <rect x="25" y="22" width="8" height="9" rx="1.5" />
+  <!-- Refrigerator Base Support Feet -->
+  <line x1="14" y1="44" x2="14" y2="46" />
+  <line x1="34" y1="44" x2="34" y2="46" />
+</svg>

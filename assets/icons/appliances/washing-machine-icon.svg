@@ -1,0 +1,21 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Front-Load Washing Machine Cabinet -->
+  <rect x="7" y="5" width="34" height="38" rx="4" />
+  <!-- Detergent Dispenser Drawer -->
+  <rect x="11" y="9" width="8" height="4.5" rx="1" />
+  <!-- Cycle Control Knob -->
+  <circle cx="28" cy="11.25" r="2.5" />
+  <!-- Status Indicator Slat -->
+  <line x1="34" y1="11.25" x2="37" y2="11.25" />
+  <!-- Large Round Porthole Door -->
+  <circle cx="24" cy="27" r="11" />
+  <!-- Glass Window Inner Ring -->
+  <circle cx="24" cy="27" r="7.5" />
+  <!-- Door Latch Handle -->
+  <path d="M33 24v6" />
+  <!-- Drum Water Ripple Wave -->
+  <path d="M19 28c1.5-1.5 3.5-1.5 5 0s3.5 1.5 5 0" />
+  <!-- Base Support Feet -->
+  <line x1="11" y1="43" x2="11" y2="45" />
+  <line x1="37" y1="43" x2="37" y2="45" />
+</svg>

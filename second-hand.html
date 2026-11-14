@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b2c">
+  <title>Second-Hand Appliances for Sale | Classic Air Conditioners Mumbai</title>
+  <meta name="description" content="Explore quality second-hand ACs, Refrigerators, Washing Machines and Microwave Ovens in Mumbai. Inspected and tested pre-owned appliances at Classic Air Conditioners.">
+  
+  <!-- Standalone Monogram Favicon (Image 1) -->
+  <link rel="icon" type="image/png" href="assets/branding/classic-monogram.png">
+  <link rel="apple-touch-icon" href="assets/branding/classic-monogram.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Information Bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-location">
+        <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Shop No. 3, No. 10, Kishore Avenue CHS Ltd, Amrut Nagar, Jogeshwari West, Mumbai</span>
+      </div>
+      <div class="topbar-meta">
+        <span>Call: <a href="tel:+919819116478">+91 98191 16478</a></span>
+        <span class="topbar-dot">•</span>
+        <span>Open Daily &middot; Closes 9:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="mainSiteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand" aria-label="Classic Air Conditioners Homepage">
+        <img src="assets/branding/classic-full-logo.png" alt="Classic Air Conditioners Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" id="siteNavMenu" aria-label="Primary site navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Repair &amp; Services</a>
+        <a href="new-appliances.html" class="nav-link">New Appliances</a>
+        <a href="second-hand.html" class="nav-link active">Second-Hand Appliances</a>
+        <a href="we-buy-used-appliances.html" class="nav-link">We Buy Used Appliances</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="section section-ice" style="padding: 60px 0 50px;">
+      <div class="container text-center">
+        <div class="eyebrow">Pre-Owned Appliance Inventory</div>
+        <h1>Second-Hand Appliances for Sale</h1>
+        <p style="max-width: 680px; margin: 14px auto 0; font-size: 1.1rem; color: var(--muted);">
+          Explore technician-inspected pre-owned ACs, refrigerators, washing machines, and microwave ovens.
+        </p>
+      </div>
+    </section>
+
+    <!-- Catalogue Section -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Sample Data Notice Banner (Mandatory Requirement) -->
+        <div class="sample-notice-banner reveal">
+          <div class="sample-notice-icon">⚠️</div>
+          <div>
+            <strong>SAMPLE DATA NOTICE:</strong> The product cards, specifications, and prices displayed below are demonstration placeholders. To verify live available stock, latest unit conditions, and exact prices, please click the enquiry button or contact us directly on WhatsApp at <strong>+91 98191 16478</strong>.
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="catalogue-toolbar reveal">
+          <div class="catalogue-filters" role="tablist" aria-label="Filter appliances by category">
+            <button type="button" class="filter-btn active" data-category="all">All Appliances</button>
+            <button type="button" class="filter-btn" data-category="ac">Second-Hand AC</button>
+            <button type="button" class="filter-btn" data-category="refrigerator">Second-Hand Refrigerator</button>
+            <button type="button" class="filter-btn" data-category="washing-machine">Second-Hand Washing Machine</button>
+            <button type="button" class="filter-btn" data-category="microwave">Second-Hand Microwave</button>
+          </div>
+
+          <div class="catalogue-search-wrap">
+            <span class="catalogue-search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="search" 
+              id="catalogueSearchInput" 
+              class="catalogue-search" 
+              placeholder="Search by brand, model or keyword..."
+              aria-label="Search second-hand appliances"
+            >
+          </div>
+        </div>
+
+        <!-- Dynamic Product Grid (Generated via js/products.js) -->
+        <div class="product-grid" id="productsGrid" aria-live="polite">
+          <!-- Dynamically populated by js/products.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Want to sell your own used appliance banner -->
+    <section class="section section-alt">
+      <div class="container text-center reveal">
+        <div class="eyebrow">Looking to Sell Instead?</div>
+        <h2>Have an Old Appliance to Sell?</h2>
+        <p style="max-width: 600px; margin: 14px auto 26px; color: var(--muted);">
+          If you are moving or upgrading your home appliances, we purchase used ACs, fridges, washing machines, and microwaves directly from customers.
+        </p>
+        <a href="we-buy-used-appliances.html" class="btn btn-primary">
+          Go to "We Buy Used Appliances" &rarr;
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-wrap">
+          <img src="assets/branding/classic-full-logo.png" alt="Classic Air Conditioners" class="footer-logo-img">
+          <p class="footer-about">
+            Your trusted local partner for home appliance repairs, servicing, new on-order appliances, and second-hand sales in Mumbai.
+          </p>
+          <p style="font-size: 0.85rem; color: #8da5ba;">
+            <strong>Shop No. 3</strong>, Kishore Avenue CHS Ltd, Jogeshwari West.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Repair &amp; Services</a></li>
+            <li><a href="new-appliances.html">New Appliances</a></li>
+            <li><a href="second-hand.html">Second-Hand Appliances</a></li>
+            <li><a href="we-buy-used-appliances.html">We Buy Used Appliances</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Categories</h4>
+          <ul class="footer-nav-list">
+            <li><a href="services.html#ac">Air Conditioners</a></li>
+            <li><a href="services.html#refrigerator">Refrigerators</a></li>
+            <li><a href="services.html#washing-machine">Washing Machines</a></li>
+            <li><a href="services.html#microwave">Microwave Ovens</a></li>
+            <li><a href="services.html">Multi-Brand Repairs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop Contact</h4>
+          <ul class="footer-contact-list">
+            <li>Shop No. 3, No. 10, Kishore Avenue CHS Ltd, Amrut Nagar, Jogeshwari West, Mumbai 400102</li>
+            <li>Phone: <a href="tel:+919819116478">+91 98191 16478</a></li>
+            <li>WhatsApp: <a href="https://wa.me/919819116478" target="_blank" rel="noopener">+91 98191 16478</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Shop+no.3+No.10+Kishore+Avenue+CHS+Ltd+Amrut+Nagar+Jogeshwari+West+Mumbai+400102" target="_blank" rel="noopener" style="color: var(--cyan);">Open in Google Maps &nearr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Classic Air Conditioners. All rights reserved.</p>
+        <p>Expert Appliance Repairs &amp; Sales &middot; Jogeshwari West, Mumbai</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href="https://wa.me/919819116478?text=Hello%20Classic%20Air%20Conditioners"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Classic Air Conditioners on WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3C8.832 3 3 8.832 3 16c0 2.53.726 4.989 2.103 7.118L3.7 28.3l5.335-1.367A12.92 12.92 0 0 0 16 29c7.168 0 13-5.832 13-13S23.168 3 16 3zm0 23.6a10.55 10.55 0 0 1-5.383-1.474l-.386-.229-3.166.811.844-3.084-.251-.399A10.55 10.55 0 0 1 5.4 16c0-5.845 4.755-10.6 10.6-10.6 5.845 0 10.6 4.755 10.6 10.6 0 5.845-4.755 10.6-10.6 10.6zm5.814-7.939c-.319-.16-1.886-.931-2.178-1.037-.292-.106-.505-.16-.717.16-.213.319-.824 1.037-1.01 1.25-.186.213-.372.239-.691.08-.319-.16-1.347-.497-2.566-1.584-.948-.846-1.589-1.891-1.775-2.21-.186-.319-.02-.491.14-.65.144-.143.319-.372.478-.558.16-.186.213-.319.319-.532.106-.213.053-.399-.027-.558-.08-.16-.717-1.728-.984-2.366-.259-.622-.522-.538-.717-.548l-.611-.011c-.213 0-.558.08-.851.399-.292.319-1.117 1.091-1.117 2.66 0 1.569 1.143 3.085 1.303 3.298.16.213 2.25 3.435 5.45 4.817.761.329 1.356.525 1.819.672.765.243 1.46.209 2.01.127.613-.092 1.886-.771 2.152-1.515.266-.745.266-1.383.186-1.515-.08-.133-.292-.213-.611-.372z"/>
+    </svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="js/whatsapp.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
