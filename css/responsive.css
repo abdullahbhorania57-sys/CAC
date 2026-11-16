@@ -7,6 +7,13 @@
    - 540px (Mobile smartphones)
    ========================================================================== */
 
+/* Global Responsive Layout Protection */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Laptop & Desktop adjustments */
 @media (max-width: 1120px) {
   .hero-grid {
@@ -185,6 +192,71 @@
     grid-template-columns: 1fr;
   }
 
+  /* Service box buttons - fix mobile overflow and keep 100% inside container */
+  .service-box-action {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .service-box-action .btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    box-sizing: border-box;
+  }
+
+  /* Second-Hand Appliances: Categories in one row, inside container, zero horizontal overflow */
+  .catalogue-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .catalogue-filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    gap: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .catalogue-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalogue-filters .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .catalogue-search-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
   .sell-steps-grid {
     grid-template-columns: 1fr;
   }
@@ -282,24 +354,9 @@
     left: -10px;
   }
 
-  .catalogue-toolbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .catalogue-search-wrap {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .catalogue-filters {
-    overflow-x: auto;
-    padding-bottom: 6px;
-    flex-wrap: nowrap;
-  }
-
   .catalogue-filters .filter-btn {
-    flex-shrink: 0;
+    padding: 7px 12px;
+    font-size: 0.82rem;
   }
 
   .float-tag {
