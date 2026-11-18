@@ -198,6 +198,17 @@ body {
     padding: 24px 18px;
   }
 
+  /* Form submit full-width buttons - responsive text wrapping so nothing is clipped */
+  .btn-block {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 13px 14px;
+    font-size: 0.94rem;
+    box-sizing: border-box;
+  }
+
   .service-box {
     padding: 26px 20px;
   }
@@ -312,6 +323,13 @@ body {
 
   .topbar-meta {
     gap: 4px 8px;
+  }
+
+  .btn-block {
+    padding: 12px 10px;
+    font-size: 0.90rem;
+    line-height: 1.35;
+    white-space: normal;
   }
 
   .category-cards-grid,
