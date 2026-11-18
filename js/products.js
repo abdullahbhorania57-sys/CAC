@@ -49,7 +49,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "LG 1.5 Ton 5-Star Dual Inverter Split AC",
     category: "ac",
     brand: "LG",
-    model: "JS-Q18HNZD (Sample)",
+    model: "JS-Q18HNZD",
     condition: "Pre-Owned - Excellent Condition",
     price: 24500, // Number in Rupees or null for "Price on Enquiry"
     description: "Fully tested and serviced 1.5 ton split AC with dual inverter technology. High cooling efficiency with 100% copper condenser coil. Ready for home installation.",
@@ -61,7 +61,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Daikin 1.5 Ton Heavy-Duty Inverter Split AC",
     category: "ac",
     brand: "Daikin",
-    model: "FTKL50TV (Sample)",
+    model: "FTKL50TV",
     condition: "Pre-Owned - Thoroughly Inspected",
     price: 26000,
     description: "Reliable Daikin inverter AC known for steady high-ambient cooling. Clean filters, fully gas-charged, and tested under high-load conditions.",
@@ -85,7 +85,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Hitachi 1 Ton 3-Star Split AC",
     category: "ac",
     brand: "Hitachi",
-    model: "RAU312HUD (Sample)",
+    model: "RAU312HUD",
     condition: "Pre-Owned - Serviced",
     price: 18500,
     description: "Compact 1 ton inverter split AC perfect for small bedrooms or cabins. Serviced with fresh refrigerant and silent indoor blower.",
@@ -101,7 +101,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Samsung 253L Double Door Refrigerator",
     category: "refrigerator",
     brand: "Samsung",
-    model: "RT28T3722S8 (Sample)",
+    model: "RT28T3722S8",
     condition: "Pre-Owned - Like New",
     price: 15500,
     description: "Frost-free double door refrigerator with smart inverter compressor. All toughened glass shelves intact, odor-free, and rapid ice-making verified.",
@@ -113,7 +113,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "LG 190L Smart Inverter Single Door Fridge",
     category: "refrigerator",
     brand: "LG",
-    model: "GL-B201ABPY (Sample)",
+    model: "GL-B201ABPY",
     condition: "Pre-Owned - Very Good",
     price: 9800,
     description: "Economical single-door direct cool refrigerator. Fast cooling, low power consumption, and thoroughly sanitized interior.",
@@ -124,12 +124,12 @@ const CAC_SECOND_HAND_PRODUCTS = [
     id: "sh-ref-03",
     name: "Whirlpool 340L Triple Door Refrigerator",
     category: "refrigerator",
-    brand: "Whirlpool",
-    model: "Protton FP 343D (Sample)",
+    brand: "Samsung",
+    model: "Protton FP 343D",
     condition: "Pre-Owned - Excellent",
     price: null, // "Price on Enquiry"
     description: "Spacious multi-door refrigerator with dedicated active fresh zone and moisture retention technology. Tested compressor and cooling coils.",
-    image: "assets/products/refrigerator/commercial-visi-cooler-front.webp",
+    image: "assets/products/refrigerator/1.webp",
     availability: "Available"
   },
   {
@@ -137,7 +137,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Godrej 236L Frost-Free Double Door Fridge",
     category: "refrigerator",
     brand: "Godrej",
-    model: "RF EON 236B (Sample)",
+    model: "RF EON 236B",
     condition: "Pre-Owned - Fully Working",
     price: 13000,
     description: "Standard family refrigerator with deep freezer capacity and anti-bacterial gasket. Quiet performance with energy saving features.",
@@ -153,7 +153,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Bosch 7 kg Fully Automatic Front Load",
     category: "washing-machine",
     brand: "Bosch",
-    model: "WAJ2416SIN (Sample)",
+    model: "WAJ2416SIN",
     condition: "Pre-Owned - Pristine Condition",
     price: 18500,
     description: "German-engineered front load washing machine with anti-vibration sidewalls and EcoSilence drive motor. Thoroughly descaled and spin-tested.",
@@ -165,7 +165,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "LG 6.5 kg Smart Inverter Top Load Washer",
     category: "washing-machine",
     brand: "LG",
-    model: "T65SPSF2Z (Sample)",
+    model: "T65SPSF2Z",
     condition: "Pre-Owned - Fully Tested",
     price: 12500,
     description: "Popular fully-automatic top load washing machine with TurboDrum technology and stainless steel drum. Includes clean inlet and drain pipes.",
@@ -177,7 +177,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "IFB 6 kg Front Load Washing Machine",
     category: "washing-machine",
     brand: "IFB",
-    model: "Diva Aqua SX (Sample)",
+    model: "Diva Aqua SX",
     condition: "Pre-Owned - Good Condition",
     price: null, // "Price on Enquiry"
     description: "Heavy duty front loader with hot wash cycle and cradle wash for delicate fabrics. Heating element and drum bearing verified by our technician.",
@@ -189,7 +189,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Samsung 7.5 kg Semi-Automatic Washer",
     category: "washing-machine",
     brand: "Samsung",
-    model: "WT75M3200LL (Sample)",
+    model: "WT75M3200LL",
     condition: "Pre-Owned - Serviced",
     price: 7500,
     description: "Durable semi-automatic dual tub machine with powerful air turbo spin dryer. Lightweight rust-proof plastic body in excellent cosmetic condition.",
@@ -205,7 +205,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "IFB 30L Convection Microwave Oven",
     category: "microwave",
     brand: "IFB",
-    model: "30BRC2 (Sample)",
+    model: "30BRC2",
     condition: "Pre-Owned - Like New",
     price: 8500,
     description: "High capacity 30-litre convection oven capable of baking, grilling, reheating, and defrosting. Stainless steel cavity, turntable and grill rack included.",
@@ -217,7 +217,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "LG 28L Charcoal Convection Microwave",
     category: "microwave",
     brand: "LG",
-    model: "MJ2886BFUM (Sample)",
+    model: "MJ2886BFUM",
     condition: "Pre-Owned - Excellent",
     price: 10500,
     description: "Premium convection microwave with Charcoal Lighting Heater and Diet Fry options. Magnetron and heating elements tested at peak power.",
@@ -229,7 +229,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Samsung 23L Solo Microwave Oven",
     category: "microwave",
     brand: "Samsung",
-    model: "MS23F301TAK (Sample)",
+    model: "MS23F301TAK",
     condition: "Pre-Owned - Clean & Tested",
     price: 4800,
     description: "Simple, durable solo microwave with ceramic enamel interior cavity. Ideal for quick reheating, cooking snacks and easy kitchen cleaning.",
@@ -241,7 +241,7 @@ const CAC_SECOND_HAND_PRODUCTS = [
     name: "Panasonic 27L Convection Microwave",
     category: "microwave",
     brand: "Panasonic",
-    model: "NN-CT645BFDG (Sample)",
+    model: "NN-CT645BFDG",
     condition: "Pre-Owned - Tested",
     price: null, // "Price on Enquiry"
     description: "Compact convection microwave oven with auto cook menus and high-speed defrost. All touch buttons responsive and turntable motor verified.",
@@ -318,7 +318,6 @@ function renderSecondHandCatalogue(filterCategory = 'all', searchQuery = '') {
           <div class="product-badges">
             <span class="badge-brand">${product.brand}</span>
           </div>
-          <span class="badge-sample">SAMPLE DATA</span>
           ${isSold ? `<div class="badge-sold"><span>SOLD</span></div>` : ''}
         </div>
 
@@ -331,7 +330,7 @@ function renderSecondHandCatalogue(filterCategory = 'all', searchQuery = '') {
           
           <div class="product-footer">
             <div>
-              <small style="color: var(--muted); font-size: 0.78rem; display: block;">SAMPLE PRICE</small>
+              <small style="color: var(--muted); font-size: 0.78rem; display: block;">PRICE</small>
               <div class="product-price ${priceClass}">${priceText}</div>
             </div>
             ${isSold ? `

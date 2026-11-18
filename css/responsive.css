@@ -103,13 +103,27 @@ body {
 @media (max-width: 768px) {
   .topbar {
     font-size: 0.78rem;
-    padding: 6px 0;
+    padding: 7px 0;
   }
 
   .topbar-inner {
     justify-content: center;
     text-align: center;
     gap: 6px;
+  }
+
+  .topbar-location {
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .topbar-meta {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    line-height: 1.4;
   }
 
   .topbar-dot {
@@ -291,6 +305,15 @@ body {
 
 /* Small Smartphone adjustments */
 @media (max-width: 540px) {
+  .topbar {
+    font-size: 0.74rem;
+    padding: 6px 0;
+  }
+
+  .topbar-meta {
+    gap: 4px 8px;
+  }
+
   .category-cards-grid,
   .new-appliance-grid,
   .product-grid,
