@@ -7,9 +7,34 @@
  * Reminds customer to attach actual appliance photographs directly in WhatsApp.
  */
 
+// Category-specific brand placeholders
+const SELL_BRAND_PLACEHOLDERS = {
+  'Air Conditioner': "e.g. LG, Daikin, Voltas, Hitachi, O'General",
+  'Refrigerator': 'e.g. Samsung, LG, Whirlpool, Godrej, Haier',
+  'Washing Machine': 'e.g. LG, Samsung, IFB, Whirlpool, Bosch',
+  'Microwave Oven': 'e.g. LG, Samsung, IFB, Panasonic, Bajaj'
+};
+
+function updateSellBrandPlaceholder(category) {
+  const brandInput = document.getElementById('sellBrand');
+  if (!brandInput) return;
+  brandInput.placeholder = SELL_BRAND_PLACEHOLDERS[category] || 'e.g. LG, Samsung, Daikin, Whirlpool';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const sellForm = document.getElementById('sellUsedApplianceForm');
   if (!sellForm) return;
+
+  // Dynamically update brand placeholder based on selected category
+  const categorySelect = document.getElementById('sellCategory');
+  if (categorySelect) {
+    categorySelect.addEventListener('change', (e) => {
+      updateSellBrandPlaceholder(e.target.value);
+    });
+    if (categorySelect.value) {
+      updateSellBrandPlaceholder(categorySelect.value);
+    }
+  }
 
   sellForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -127,6 +152,7 @@ function selectSellCategory(categoryName) {
   const catSelect = document.getElementById('sellCategory');
   if (catSelect) {
     catSelect.value = categoryName;
+    updateSellBrandPlaceholder(categoryName);
   }
   const formSection = document.getElementById('sellFormSection');
   if (formSection) {

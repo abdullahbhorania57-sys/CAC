@@ -6,9 +6,34 @@
  * formatted details. No data is stored on server or database.
  */
 
+// Category-specific brand placeholders for service booking
+const BOOK_BRAND_PLACEHOLDERS = {
+  'Air Conditioner': "e.g. LG, Daikin, Voltas, Hitachi, O'General",
+  'Refrigerator': 'e.g. Samsung, LG, Whirlpool, Godrej, Haier',
+  'Washing Machine': 'e.g. LG, Samsung, IFB, Whirlpool, Bosch',
+  'Microwave Oven': 'e.g. LG, Samsung, IFB, Panasonic, Bajaj'
+};
+
+function updateBookBrandPlaceholder(category) {
+  const brandInput = document.getElementById('bookBrand');
+  if (!brandInput) return;
+  brandInput.placeholder = BOOK_BRAND_PLACEHOLDERS[category] || 'e.g. LG, Daikin, Samsung, Whirlpool';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('serviceBookingForm');
   if (!bookingForm) return;
+
+  // Dynamically update brand placeholder based on selected category
+  const categorySelect = document.getElementById('bookCategory');
+  if (categorySelect) {
+    categorySelect.addEventListener('change', (e) => {
+      updateBookBrandPlaceholder(e.target.value);
+    });
+    if (categorySelect.value) {
+      updateBookBrandPlaceholder(categorySelect.value);
+    }
+  }
 
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
