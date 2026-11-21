@@ -312,6 +312,45 @@ body {
     width: 28px;
     height: 28px;
   }
+
+  /* Mobile background animation optimizations (smooth 60fps & battery saving) */
+  .hero::before,
+  .section-ice::before,
+  .section-dark::before {
+    height: 55%;
+  }
+
+  .hero::after {
+    width: 300px;
+    height: 300px;
+    filter: blur(40px);
+    right: -30px;
+    top: 6%;
+  }
+
+  .hero-grid::before {
+    width: 260px;
+    height: 260px;
+    filter: blur(45px);
+    left: -40px;
+    top: 20%;
+  }
+
+  .section-ice::after {
+    width: 240px;
+    height: 240px;
+    filter: blur(30px);
+    right: -30px;
+    top: -30px;
+  }
+
+  .section-dark::after {
+    width: 260px;
+    height: 260px;
+    filter: blur(45px);
+    bottom: -60px;
+    right: -20px;
+  }
 }
 
 /* Small Smartphone adjustments */

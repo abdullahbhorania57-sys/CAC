@@ -1,16 +1,17 @@
 /* ==========================================================================
-   Classic Air Conditioners - Animations & Transitions
-   Respects prefers-reduced-motion
+   Classic Air Conditioners - Animations & Interactive Experiences
+   - Visible, Atmospheric Cooling Background Animations (Hero, Ice, Alt, Dark, Global)
+   - Distinct, Delightful Hover Animations for Cards, Buttons, Pills & Icons
+   - Fully Accessible (Respects prefers-reduced-motion)
+   - Brand Palette: #071b2c, #0c2b43, #1687d9, #39c6e8, #eaf7ff, #ffffff
    ========================================================================== */
 
-/* Keyframe animations */
+/* --------------------------------------------------------------------------
+   1. Base Keyframes & Scroll Reveals
+   -------------------------------------------------------------------------- */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -25,15 +26,10 @@
 }
 
 @keyframes pulseSubtle {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
-/* Scroll reveal trigger classes */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -46,43 +42,27 @@
   transform: translateY(0);
 }
 
-/* Stagger delay helpers */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
-/* Micro-interactions */
-.btn, .cat-card, .service-box, .product-card, .new-appliance-card {
-  will-change: transform, box-shadow;
-}
-
-.floating-whatsapp {
-  animation: pulseSubtle 3s ease-in-out infinite;
-}
-
-.floating-whatsapp:hover {
-  animation: none;
-}
-
-/* ---------- Restored Original Hero Section Right-Side Animations ---------- */
+/* --------------------------------------------------------------------------
+   2. Restored Hero Visual Elements (Right Side AC & Badges)
+   -------------------------------------------------------------------------- */
 @keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-11px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-11px); }
 }
 
 @keyframes airStream {
   0%, 100% {
     transform: translate(0, 0) rotate(13deg);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   50% {
-    transform: translate(7px, 8px) rotate(-9deg);
-    opacity: 0.3;
+    transform: translate(8px, 9px) rotate(-8deg);
+    opacity: 0.35;
   }
 }
 
@@ -129,13 +109,678 @@
   animation: heroFadeUp 0.75s ease 0.14s both;
 }
 
-/* Accessible reduced motion override */
+/* --------------------------------------------------------------------------
+   3. VISIBLE ATMOSPHERIC BACKGROUND ANIMATIONS
+   -------------------------------------------------------------------------- */
+
+/* Global Ambient Cooling Airflow (Entire Website Body) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 12% 18%, rgba(57, 198, 232, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 88% 82%, rgba(22, 135, 217, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(234, 247, 255, 0.5) 0%, transparent 60%);
+  animation: globalBreezeShift 12s ease-in-out infinite alternate;
+}
+
+@keyframes globalBreezeShift {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.04) translate(-1.5%, 1%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.98) translate(1%, -1%);
+    opacity: 0.8;
+  }
+}
+
+/* --- Hero Section Background (Home Page) --- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(circle at 75% 35%, #13486c 0%, var(--navy-light) 42%, var(--navy) 82%);
+  color: var(--white);
+  padding: 86px 0 110px;
+}
+
+/* Flowing Cooling Air Wave Ribbon (Visible flowing cool breeze behind hero) */
+.hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 75%;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%2339c6e8' fill-opacity='0.11' d='M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,122.7C672,128,768,192,864,208C960,224,1056,192,1152,165.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%231687d9' fill-opacity='0.08' d='M0,96L60,112C120,128,240,160,360,181.3C480,203,600,213,720,192C840,171,960,117,1080,112C1200,107,1320,149,1380,170.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: heroWaveFlow 14s linear infinite;
+}
+
+@keyframes heroWaveFlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Luminous Cyan Cooling Aurora behind AC Visual */
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 198, 232, 0.48) 0%, rgba(22, 135, 217, 0.22) 50%, transparent 72%);
+  filter: blur(45px);
+  right: 5%;
+  top: 10%;
+  pointer-events: none;
+  animation: heroGlowBreathe 7s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlowBreathe {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-35px, 30px) scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(25px, -20px) scale(0.92);
+    opacity: 0.75;
+  }
+}
+
+/* Royal Blue Air Aura behind Headline */
+.hero-grid::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(22, 135, 217, 0.38) 0%, rgba(7, 27, 44, 0) 70%);
+  filter: blur(55px);
+  left: -60px;
+  top: 15%;
+  pointer-events: none;
+  animation: heroAuraBlue 9s ease-in-out infinite alternate;
+}
+
+@keyframes heroAuraBlue {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate(45px, -25px) scale(1.2);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(15px, 35px) scale(0.88);
+    opacity: 0.7;
+  }
+}
+
+/* --- Inner Page Banners (.section-ice) --- */
+.section-ice {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eaf7ff 0%, #f4faff 45%, #e1f3ff 100%);
+}
+
+/* Flowing Ice Breeze Wave Ribbon */
+.section-ice::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 90%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 240' preserveAspectRatio='none'%3E%3Cpath fill='%2339c6e8' fill-opacity='0.13' d='M0,96L48,112C96,128,192,160,288,154.7C384,149,480,107,576,96C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,240L1392,240C1344,240,1248,240,1152,240C1056,240,960,240,864,240C768,240,672,240,576,240C480,240,384,240,288,240C192,240,96,240,48,240L0,240Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: iceWaveFlow 14s linear infinite;
+}
+
+@keyframes iceWaveFlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Soft Floating Cyan Cooling Orb (Top Left) */
+.section-ice::after {
+  content: '';
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 198, 232, 0.32) 0%, rgba(22, 135, 217, 0.12) 50%, transparent 70%);
+  filter: blur(35px);
+  top: -50px;
+  right: 6%;
+  pointer-events: none;
+  z-index: 0;
+  animation: iceOrbPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes iceOrbPulse {
+  0% { transform: translate(0, 0) scale(0.92); opacity: 0.65; }
+  100% { transform: translate(-40px, 25px) scale(1.18); opacity: 1; }
+}
+
+.section-ice .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Dark Sections (.section-dark) --- */
+.section-dark {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 55%, #0e3758 100%);
+  color: var(--white);
+}
+
+.section-dark::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 80%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 280' preserveAspectRatio='none'%3E%3Cpath fill='%2339c6e8' fill-opacity='0.08' d='M0,128L60,138.7C120,149,240,171,360,165.3C480,160,600,128,720,117.3C840,107,960,117,1080,138.7C1200,160,1320,192,1380,208L1440,224L1440,280L1380,280C1320,280,1200,280,1080,280C960,280,840,280,720,280C600,280,480,280,360,280C240,280,120,280,60,280L0,280Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: darkWaveFlow 16s linear infinite;
+}
+
+@keyframes darkWaveFlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.section-dark::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 198, 232, 0.28) 0%, transparent 70%);
+  filter: blur(50px);
+  bottom: -90px;
+  right: 8%;
+  pointer-events: none;
+  z-index: 0;
+  animation: darkOrbPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes darkOrbPulse {
+  0% { transform: scale(0.92) translate(0, 0); opacity: 0.55; }
+  100% { transform: scale(1.18) translate(-35px, -25px); opacity: 0.95; }
+}
+
+.section-dark .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Alternate Light Sections (.section-alt) --- */
+.section-alt {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf5fa 50%, #f7fafc 100%);
+}
+
+.section-alt::before {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 198, 232, 0.16) 0%, rgba(22, 135, 217, 0.06) 50%, transparent 70%);
+  filter: blur(40px);
+  top: -60px;
+  left: 4%;
+  pointer-events: none;
+  z-index: 0;
+  animation: altOrbDrift 9s ease-in-out infinite alternate;
+}
+
+@keyframes altOrbDrift {
+  0% { transform: translate(0, 0); opacity: 0.55; }
+  100% { transform: translate(50px, 35px); opacity: 0.95; }
+}
+
+.section-alt .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. DISTINCT, DELIGHTFUL HOVER ANIMATIONS
+   -------------------------------------------------------------------------- */
+
+/* (A) Appliance Category Cards - Floating Air Cushion & Icon Bounce */
+.cat-card {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s ease,
+              border-color 0.32s ease !important;
+}
+
+.cat-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: var(--cyan) !important;
+  box-shadow: 0 16px 36px rgba(22, 135, 217, 0.18), 0 0 0 1.5px rgba(57, 198, 232, 0.45) !important;
+}
+
+.cat-card-icon {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              filter 0.3s ease;
+}
+
+.cat-card:hover .cat-card-icon {
+  transform: translateY(-5px) scale(1.15) rotate(-5deg) !important;
+  filter: drop-shadow(0 8px 16px rgba(57, 198, 232, 0.45));
+}
+
+.cat-card-links a {
+  transition: color 0.22s ease, transform 0.22s ease;
+  display: inline-block;
+}
+
+.cat-card-links a:hover {
+  transform: translateX(4px);
+  color: var(--blue) !important;
+}
+
+/* (B) Detailed Service Boxes - Top-Border Cyan Energy Beam & Icon Pulse */
+.service-box {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s ease,
+              border-color 0.32s ease !important;
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transition: width 0.38s ease, left 0.38s ease;
+  border-radius: 4px 4px 0 0;
+  z-index: 2;
+}
+
+.service-box:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.service-box:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(22, 135, 217, 0.4) !important;
+  box-shadow: 0 16px 36px rgba(7, 27, 44, 0.1), 0 0 0 1px rgba(57, 198, 232, 0.25) !important;
+}
+
+.service-box-icon {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease;
+}
+
+.service-box:hover .service-box-icon {
+  transform: translateY(-4px) scale(1.12) rotate(4deg);
+  box-shadow: 0 10px 22px rgba(22, 135, 217, 0.32);
+}
+
+.service-item-bullet {
+  transition: color 0.25s ease;
+  transform: none !important;
+}
+
+.service-box:hover .service-item-bullet {
+  transform: none !important;
+}
+
+.service-item-bullet::before {
+  transition: color 0.25s ease;
+}
+
+.service-box:hover .service-item-bullet::before {
+  color: var(--cyan);
+}
+
+/* (C) Product Cards & New Appliance Cards - Cinematic Lift & Image Zoom */
+.product-card,
+.new-appliance-card {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s ease,
+              border-color 0.32s ease !important;
+}
+
+.product-card:hover,
+.new-appliance-card:hover {
+  transform: translateY(-8px) scale(1.012) !important;
+  border-color: var(--cyan) !important;
+  box-shadow: 0 20px 42px rgba(7, 27, 44, 0.14), 0 0 0 1px rgba(57, 198, 232, 0.3) !important;
+}
+
+.product-img-wrap img {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.08) !important;
+  filter: brightness(1.03);
+}
+
+.new-app-icon img {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.new-appliance-card:hover .new-app-icon img {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+.product-card:hover .badge-brand,
+.new-appliance-card:hover .new-app-badge {
+  animation: badgePop 0.4s ease;
+}
+
+@keyframes badgePop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* (D) Second-Hand Category Filter Pills - Bouncy Pill Lift & Ice Aura */
+.filter-btn {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease !important;
+}
+
+.filter-btn:hover:not(.active) {
+  transform: translateY(-3px) scale(1.04) !important;
+  border-color: var(--cyan) !important;
+  background: var(--ice) !important;
+  color: var(--blue) !important;
+  box-shadow: 0 6px 16px rgba(57, 198, 232, 0.32) !important;
+}
+
+.filter-btn.active {
+  box-shadow: 0 6px 18px rgba(22, 135, 217, 0.4) !important;
+}
+
+/* (E) Major Brand Pills - Elevating Pill Float */
+.brand-badge {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.28s ease,
+              background 0.28s ease,
+              border-color 0.28s ease,
+              color 0.28s ease !important;
+}
+
+.brand-badge:hover {
+  transform: translateY(-5px) scale(1.06) !important;
+  background: var(--white) !important;
+  color: var(--navy) !important;
+  border-color: var(--cyan) !important;
+  box-shadow: 0 8px 22px rgba(57, 198, 232, 0.4) !important;
+}
+
+/* (F) Action Buttons - Light Sheen Shimmer & Arrow Slide */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              background-color 0.25s ease,
+              border-color 0.25s ease !important;
+}
+
+/* Luminous diagonal light sheen passing across button on hover */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: none;
+}
+
+.btn:hover::after {
+  animation: buttonShimmer 0.75s ease forwards;
+}
+
+@keyframes buttonShimmer {
+  0% { left: -70%; }
+  100% { left: 150%; }
+}
+
+.btn:hover {
+  transform: translateY(-3px) !important;
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.98) !important;
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45) !important;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 26px rgba(22, 135, 217, 0.42) !important;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 8px 20px rgba(57, 198, 232, 0.32) !important;
+}
+
+.btn svg {
+  transition: transform 0.25s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* (G) Trust Strip Items - Icon Bounce & Tilt */
+.trust-item {
+  transition: transform 0.28s ease, background-color 0.28s ease, box-shadow 0.28s ease;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+}
+
+.trust-item:hover {
+  transform: translateY(-3px);
+  background: rgba(234, 247, 255, 0.65);
+  box-shadow: 0 6px 18px rgba(22, 135, 217, 0.12);
+}
+
+.trust-icon {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+}
+
+.trust-item:hover .trust-icon {
+  transform: scale(1.18) rotate(8deg);
+  filter: drop-shadow(0 4px 10px rgba(57, 198, 232, 0.45));
+}
+
+/* (H) Customer Review Cards - Testimonial Lift & Star Twinkle */
+.review-card {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s ease,
+              border-color 0.32s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  box-shadow: 0 16px 36px rgba(7, 27, 44, 0.1);
+}
+
+.review-stars {
+  transition: transform 0.28s ease, filter 0.28s ease;
+  display: inline-block;
+}
+
+.review-card:hover .review-stars {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 8px rgba(255, 191, 85, 0.6));
+}
+
+/* (I) Contact Cards & Selling Steps - Step Pulse & Jump */
+.contact-info-card,
+.sell-step-item {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.contact-info-card:hover,
+.sell-step-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  box-shadow: 0 14px 32px rgba(22, 135, 217, 0.14);
+}
+
+.contact-icon,
+.sell-step-num {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover .contact-icon,
+.sell-step-item:hover .sell-step-num {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(57, 198, 232, 0.42);
+}
+
+/* (J) Floating WhatsApp Button - Continuous Pulse & Joyful Wiggle */
+.floating-whatsapp {
+  position: fixed;
+  animation: pulseSubtle 3.2s ease-in-out infinite;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease !important;
+}
+
+.floating-whatsapp:hover {
+  animation: whatsappWiggle 0.6s ease forwards !important;
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.55) !important;
+}
+
+@keyframes whatsappWiggle {
+  0% { transform: translateY(-4px) scale(1.1) rotate(0deg); }
+  25% { transform: translateY(-4px) scale(1.12) rotate(-9deg); }
+  50% { transform: translateY(-4px) scale(1.12) rotate(9deg); }
+  75% { transform: translateY(-4px) scale(1.12) rotate(-4deg); }
+  100% { transform: translateY(-4px) scale(1.12) rotate(0deg); }
+}
+
+/* (K) Form Inputs - Cooling Focus Glow */
+.form-control {
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.form-control:hover:not(:focus) {
+  border-color: #b3d7ee;
+  background-color: #fafcff;
+}
+
+.form-control:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3.5px rgba(57, 198, 232, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile Responsiveness Tuning
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero::before,
+  .section-ice::before,
+  .section-dark::before {
+    height: 60%;
+  }
+
+  .hero::after {
+    width: 300px;
+    height: 300px;
+    filter: blur(40px);
+    right: -30px;
+    top: 6%;
+  }
+
+  .hero-grid::before {
+    width: 260px;
+    height: 260px;
+    filter: blur(45px);
+    left: -40px;
+    top: 20%;
+  }
+
+  .section-ice::after {
+    width: 240px;
+    height: 240px;
+    filter: blur(30px);
+    right: -30px;
+    top: -30px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Accessible Reduced Motion Override
+   -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hero,
+  .hero::before,
+  .hero::after,
+  .hero-grid::before,
+  .section-ice,
+  .section-ice::before,
+  .section-ice::after,
+  .section-alt,
+  .section-alt::before,
+  .section-dark,
+  .section-dark::before,
+  .section-dark::after,
+  body::before {
+    animation: none !important;
+    background-position: 0 0 !important;
   }
 
   .reveal {
